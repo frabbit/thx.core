@@ -468,7 +468,7 @@ Create a copy of the object with the field `field` replaced by `value`.
 #if macro
   static function buildFromAnonymous(matchField, fields, value, pos) {
     var found = false;
-    var e = haxe.macro.Expr.ExprDef.EObjectDecl(fields.map(function(field) {
+    var e = haxe.macro.Expr.ExprDef.EObjectDecl(fields.map(function(field):haxe.macro.Expr.ObjectField {
       var fieldName = field.name;
       if(fieldName == matchField) {
         found = true;
